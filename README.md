@@ -186,19 +186,30 @@ npm run test:all      # Both frontend and backend
 
 ## ⏱️ If I Had More Time
 
-1. **Enhanced test coverage**
+1. **Code refactoring for better testability reusability**
+   - **Backend**: Extract business logic into service layer (`StoreService`, `AnalyticsService`), split analytics into smaller pure functions, create utility modules for common operations
+   - **Frontend**: Break pages into smaller components, extract custom hooks (`useStores`, `useProducts`, `useForm`), create shared formatters and validators
+   - **Benefits:**
+   - Each function testable in isolation
+   - Easier to mock dependencies
+   - Reduced code duplication
+   - Better separation of concerns
+   - Simpler unit tests (no need to mock entire controllers/pages)
+
+
+2. **Enhanced test coverage**
    - API integration tests with test database
    - E2E tests for critical user flows
    - Performance/load testing
    - Visual regression tests
 
-2. **Enhanced analytics features**
+3. **Enhanced analytics features**
    - Historical trends over time
    - Price analysis by category/location
    - Inventory value calculations
    - Export to CSV/PDF
 
-3. **Production hardening**
+4. **Production hardening**
    - Add authentication (JWT)
    - Implement rate limiting
    - Add API documentation (Swagger)
